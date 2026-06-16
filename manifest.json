@@ -27,7 +27,7 @@
   "categories": ["education", "productivity"],
   "screenshots": [
     {
-      "src": "/icon-512.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "form_factor": "narrow"
@@ -38,10 +38,10 @@
       "name": "Iniciar Examen",
       "short_name": "Examen",
       "description": "Inicia un nuevo examen completo",
-      "url": "/?mode=exam",
+      "url": "?mode=exam",
       "icons": [
         {
-          "src": "/icon-192.png",
+          "src": "icon-192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
