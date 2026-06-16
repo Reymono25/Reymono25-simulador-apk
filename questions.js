@@ -1,0 +1,2642 @@
+const QUESTIONS = [
+  {
+    "id": 1,
+    "number": 1,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "true_false",
+    "text": "Durante la implementación de servicios de red, los usuarios acceden a aplicaciones usando nombres legibles en lugar de números. Un servidor DNS traduce nombres de dominio a direcciones IP.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 2,
+    "number": 2,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "true_false",
+    "text": "Un administrador necesita conectarse de forma remota a un servidor Linux a través de una red no confiable. En Linux, el servicio SSH permite la administración remota segura de servidores.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 3,
+    "number": 3,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "true_false",
+    "text": "Un servicio web recibe miles de solicitudes y la empresa quiere repartirlas entre varios nodos. El balanceo de carga distribuye solicitudes entre varios servidores para mejorar disponibilidad y rendimiento.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 4,
+    "number": 4,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "true_false",
+    "text": "Un equipo de desarrollo usa contenedores para empaquetar aplicaciones y revisar compatibilidad entre entornos. Docker es un hipervisor de tipo 1.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Falso",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 5,
+    "number": 5,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "true_false",
+    "text": "Una organización publica su portal interno y también quiere ofrecer acceso cifrado desde Internet. Un servidor web puede publicar contenido mediante HTTP y HTTPS.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 6,
+    "number": 6,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "true_false",
+    "text": "Los registros muestran diferencias de hora entre servidores y eso afecta auditorías y autenticación. NTP se utiliza para sincronizar la hora entre equipos de una red.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 7,
+    "number": 1,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "matching",
+    "text": "Relacione cada servicio de infraestructura con su función correspondiente.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "DNS"
+      },
+      {
+        "key": "B",
+        "text": "DHCP"
+      },
+      {
+        "key": "C",
+        "text": "NTP"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Servicio que traduce nombres de dominio en direcciones IP utilizables por hosts y aplicaciones."
+      },
+      {
+        "key": "2",
+        "text": "Protocolo que sincroniza la hora del sistema entre equipos con una referencia temporal común"
+      },
+      {
+        "key": "3",
+        "text": "Protocolo que entrega automáticamente dirección IP, máscara, gateway y otros parámetros de red."
+      }
+    ],
+    "answer": "A-1, B-3, C-2"
+  },
+  {
+    "id": 8,
+    "number": 2,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "matching",
+    "text": "Relacione cada herramienta de automatización, contenedores o monitoreo",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Ansible"
+      },
+      {
+        "key": "B",
+        "text": "Docker"
+      },
+      {
+        "key": "C",
+        "text": "Prometheus"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Sistema de monitoreo que recopila métricas en series temporales y permite alertar sobre el estado de la infraestructura."
+      },
+      {
+        "key": "2",
+        "text": "Plataforma que empaqueta aplicaciones y dependencias en contenedores portables y consistentes entre entornos."
+      },
+      {
+        "key": "3",
+        "text": "Plataforma de automatización declarativa usada para aprovisionar, configurar y orquestar infraestructura."
+      }
+    ],
+    "answer": "A-3, B-2, C-1"
+  },
+  {
+    "id": 9,
+    "number": 3,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "matching",
+    "text": "Relacione cada servicio de Windows Server con su función principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "AD DS"
+      },
+      {
+        "key": "B",
+        "text": "IIS"
+      },
+      {
+        "key": "C",
+        "text": "WSUS"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Servicio de directorio de Microsoft para autenticación, autorización y administración centralizada del dominio."
+      },
+      {
+        "key": "2",
+        "text": "Servidor web y de aplicaciones de Microsoft usado para publicar sitios, APIs y servicios HTTP/HTTPS."
+      },
+      {
+        "key": "3",
+        "text": "Solución centralizada para aprobar, distribuir y controlar actualizaciones en equipos con Windows."
+      }
+    ],
+    "answer": "A-1, B-2, C-3"
+  },
+  {
+    "id": 10,
+    "number": 4,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "matching",
+    "text": "Relacione cada topología de red con su característica correspondiente.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Estrella"
+      },
+      {
+        "key": "B",
+        "text": "Anillo"
+      },
+      {
+        "key": "C",
+        "text": "Malla"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Topología con múltiples rutas posibles entre nodos, lo que incrementa redundancia y resiliencia."
+      },
+      {
+        "key": "2",
+        "text": "Topología en la que cada nodo se conecta con sus vecinos formando un circuito cerrado."
+      },
+      {
+        "key": "3",
+        "text": "Topología en la que todos los nodos dependen de un dispositivo o punto central de conexión."
+      }
+    ],
+    "answer": "A-3, B-2, C-1"
+  },
+  {
+    "id": 11,
+    "number": 5,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "matching",
+    "text": "Relacione cada tipo de dirección IP con su característica correspondiente.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Privada"
+      },
+      {
+        "key": "B",
+        "text": "Loopback"
+      },
+      {
+        "key": "C",
+        "text": "Multicast"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Ejemplo de dirección reservada para pruebas locales en el propio host: 127.0.0.1."
+      },
+      {
+        "key": "2",
+        "text": "Ejemplo de dirección del espacio privado RFC 1918 utilizada internamente en redes no públicas: 192.168.10.25"
+      },
+      {
+        "key": "3",
+        "text": "Ejemplo de dirección usada para tráfico dirigido a grupos de hosts: 224.0.0.5."
+      }
+    ],
+    "answer": "A-2, B-1, C-3"
+  },
+  {
+    "id": 12,
+    "number": 1,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Una organización decide consolidar varios servidores físicos en un solo host de alto rendimiento mediante virtualización. ¿Cuál es el propósito principal de un hipervisor en este escenario?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Cifrar discos duros"
+      },
+      {
+        "letter": "b",
+        "text": "Resolver nombres de dominio"
+      },
+      {
+        "letter": "c",
+        "text": "Administrar cuentas de usuario del dominio"
+      },
+      {
+        "letter": "d",
+        "text": "Administrar y ejecutar máquinas virtuales sobre hardware físico"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 13,
+    "number": 2,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Un administrador debe conectarse remotamente a un servidor a través de una red pública sin exponer credenciales en texto claro. ¿Cuál de los siguientes protocolos cifra de forma nativa la administración remota de servidores?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "FTP"
+      },
+      {
+        "letter": "b",
+        "text": "Telnet"
+      },
+      {
+        "letter": "c",
+        "text": "SSH"
+      },
+      {
+        "letter": "d",
+        "text": "HTTP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 14,
+    "number": 3,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Un técnico necesita revisar rápidamente cuánto espacio libre y ocupado tiene cada sistema de archivos montado. ¿Qué comando de Linux muestra el uso de espacio en disco por sistema de archivos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ps aux"
+      },
+      {
+        "letter": "b",
+        "text": "df -h"
+      },
+      {
+        "letter": "c",
+        "text": "uname -r"
+      },
+      {
+        "letter": "d",
+        "text": "free -m"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 15,
+    "number": 4,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Un equipo de desarrollo busca automatizar el paso desde la integración del código hasta su publicación en producción. ¿Qué componente permite automatizar la entrega y despliegue continuo de aplicaciones?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Servidor NTP"
+      },
+      {
+        "letter": "b",
+        "text": "Proxy inverso"
+      },
+      {
+        "letter": "c",
+        "text": "Pipeline CI/CD"
+      },
+      {
+        "letter": "d",
+        "text": "Servidor DNS"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 16,
+    "number": 5,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Al conectar nuevos equipos a la red, el área de soporte quiere evitar la configuración manual de IP, máscara y gateway. ¿Qué servicio asigna automáticamente parámetros IP a los clientes de la red?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "DNS"
+      },
+      {
+        "letter": "b",
+        "text": "DHCP"
+      },
+      {
+        "letter": "c",
+        "text": "SNMP"
+      },
+      {
+        "letter": "d",
+        "text": "RADIUS"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 17,
+    "number": 6,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Un administrador sospecha que un proceso está consumiendo muchos recursos y necesita observarlo en tiempo real. ¿Qué comando de Linux permite revisar procesos en ejecución en tiempo real?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "mkdir"
+      },
+      {
+        "letter": "b",
+        "text": "pwd"
+      },
+      {
+        "letter": "c",
+        "text": "top"
+      },
+      {
+        "letter": "d",
+        "text": "lsblk"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 18,
+    "number": 7,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Una empresa requiere centralizar autenticación, control de acceso y aplicación de políticas para usuarios y equipos. ¿Qué servicio centraliza autenticación y políticas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "IIS"
+      },
+      {
+        "letter": "b",
+        "text": "Active Directory Domain Services"
+      },
+      {
+        "letter": "c",
+        "text": "WSUS"
+      },
+      {
+        "letter": "d",
+        "text": "Hyper-V"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 19,
+    "number": 8,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Una organización publica varias aplicaciones web internas y desea distribuir las solicitudes antes de llegar a los servidores backend. ¿Qué función cumple un proxy inverso?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Sincronizar hora en la red"
+      },
+      {
+        "letter": "b",
+        "text": "Asignar direcciones IP a hosts"
+      },
+      {
+        "letter": "c",
+        "text": "Publicar servicios internos hacia clientes externos y distribuir solicitudes"
+      },
+      {
+        "letter": "d",
+        "text": "Resolver nombres de dominio internos"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 20,
+    "number": 9,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Un equipo necesita distribuir una aplicación con todas sus bibliotecas para que funcione igual en distintos entornos. ¿Qué herramienta de contenedores se usa ampliamente para empaquetar aplicaciones y sus dependencias?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Postfix"
+      },
+      {
+        "letter": "b",
+        "text": "Wireshark"
+      },
+      {
+        "letter": "c",
+        "text": "Kubernetes"
+      },
+      {
+        "letter": "d",
+        "text": "Docker"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 21,
+    "number": 10,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Un servicio recibe gran cantidad de conexiones simultáneas y se quiere repartir la carga entre varios nodos. ¿Cuál es la función de un balanceador de carga?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Centralizar logs"
+      },
+      {
+        "letter": "b",
+        "text": "Distribuir tráfico entre varios servidores"
+      },
+      {
+        "letter": "c",
+        "text": "Crear usuarios en el dominio"
+      },
+      {
+        "letter": "d",
+        "text": "Sincronizar directorios LDAP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 22,
+    "number": 11,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Durante una tarea de administración se necesita identificar dónde se definen los sistemas de archivos que pueden montarse automáticamente. ¿Qué archivo de Linux suele contener definiciones de sistemas de archivos montables?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/etc/hosts"
+      },
+      {
+        "letter": "b",
+        "text": "/etc/passwd"
+      },
+      {
+        "letter": "c",
+        "text": "/etc/resolv.conf"
+      },
+      {
+        "letter": "d",
+        "text": "/etc/fstab"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 23,
+    "number": 12,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Un ingeniero de planta analiza el presupuesto óptico para verificar si un enlace cumple con la potencia requerida. ¿Qué parámetro óptico representa la pérdida de potencia en un enlace?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Atenuación"
+      },
+      {
+        "letter": "b",
+        "text": "Ganancia"
+      },
+      {
+        "letter": "c",
+        "text": "Ancho de banda base"
+      },
+      {
+        "letter": "d",
+        "text": "Potencia de transmisión nominal"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 24,
+    "number": 13,
+    "theme": "TEMA I: Sistemas operativos, administración de servicios y soporte",
+    "type": "multiple_choice",
+    "text": "Un administrador Cisco necesita una vista breve del estado de las interfaces y sus direcciones configuradas. ¿Qué comando de Cisco muestra el estado resumido de interfaces IP?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "show startup-config"
+      },
+      {
+        "letter": "b",
+        "text": "copy running-config startup-config"
+      },
+      {
+        "letter": "c",
+        "text": "show version"
+      },
+      {
+        "letter": "d",
+        "text": "show ip interface brief"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 25,
+    "number": 1,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "Un área de operaciones requiere supervisar routers, switches y servidores desde una consola central. SNMP se usa para monitoreo y gestión de dispositivos de red y servidores.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 26,
+    "number": 2,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "En una red con varias áreas se requiere segmentar el tráfico para limitar broadcasts y mejorar el control. Una VLAN extiende un dominio de broadcast a todos los switches sin segmentación lógica.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Falso",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 27,
+    "number": 3,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "Un analista compara el tamaño de direccionamiento entre IPv4 e IPv6 para planificar una migración. IPv6 utiliza direcciones de 32 bits.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Falso",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 28,
+    "number": 4,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "En una red empresarial se necesita un protocolo IGP que calcule rutas a partir del estado de los enlaces. OSPF es un protocolo de enrutamiento interior de estado de enlace.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 29,
+    "number": 5,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "Se analiza el alcance geográfico de distintos tipos de red para documentar la arquitectura. Una red LAN normalmente cubre una extensión geográfica mayor que una WAN.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Falso",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 30,
+    "number": 6,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "Un técnico revisa la relación entre máscaras de subred y prefijos CIDR para configurar hosts. La máscara 255.255.255.0 corresponde a un prefijo /24.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 31,
+    "number": 7,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "En una red local un equipo conoce la IP de destino, pero necesita identificar la interfaz física correspondiente. El protocolo ARP resuelve direcciones IPv4 a direcciones MAC en una red local.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 32,
+    "number": 8,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "En el diseño de una LAN se busca una topología sencilla para conectar múltiples equipos a un punto central. La topología en estrella conecta los equipos a un dispositivo central, como un switch.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 33,
+    "number": 9,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "true_false",
+    "text": "Un administrador asigna una subred /30 para un enlace punto a punto y necesita conocer sus hosts utilizables. En una subred /30 de IPv4 existen 4 direcciones totales, de las cuales 2 son utilizables para hosts.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 34,
+    "number": 1,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "matching",
+    "text": "Relacione cada protocolo o servicio seguro con su función correspondiente.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "SSH"
+      },
+      {
+        "key": "B",
+        "text": "HTTPS"
+      },
+      {
+        "key": "C",
+        "text": "LDAP"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Protocolo utilizado para consultar y administrar información almacenada en servicios de directorio."
+      },
+      {
+        "key": "2",
+        "text": "Versión segura de HTTP que publica contenido web mediante cifrado TLS/SSL."
+      },
+      {
+        "key": "3",
+        "text": "Protocolo cifrado que permite acceso remoto seguro a la línea de comandos y el uso de túneles."
+      }
+    ],
+    "answer": "A-3, B-2, C-1"
+  },
+  {
+    "id": 35,
+    "number": 2,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "matching",
+    "text": "Relacione cada archivo o directorio de Linux con su función correspondiente.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "/etc/hosts"
+      },
+      {
+        "key": "B",
+        "text": "/etc/fstab"
+      },
+      {
+        "key": "C",
+        "text": "/var/log"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Archivo local utilizado para resolver nombres de host antes o independientemente de la consulta a DNS."
+      },
+      {
+        "key": "2",
+        "text": "Directorio estándar donde se almacenan registros operativos y eventos del sistema y de sus servicios."
+      },
+      {
+        "key": "3",
+        "text": "Archivo de configuración que define sistemas de archivos y opciones de montaje aplicadas por el sistema."
+      }
+    ],
+    "answer": "A-1, B-3, C-2"
+  },
+  {
+    "id": 36,
+    "number": 3,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "matching",
+    "text": "Relacione cada protocolo de red con su función correspondiente.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "ARP"
+      },
+      {
+        "key": "B",
+        "text": "OSPF"
+      },
+      {
+        "key": "C",
+        "text": "BGP"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Protocolo IGP de estado de enlace que calcula rutas con SPF dentro de un sistema autónomo."
+      },
+      {
+        "key": "2",
+        "text": "Protocolo que obtiene la dirección MAC asociada a una dirección IPv4 dentro del segmento local."
+      },
+      {
+        "key": "3",
+        "text": "Protocolo de enrutamiento exterior utilizado para el intercambio de rutas entre sistemas autónomos."
+      }
+    ],
+    "answer": "A-2, B-1, C-3"
+  },
+  {
+    "id": 37,
+    "number": 4,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "matching",
+    "text": "Relacione cada comando de diagnóstico con su utilidad principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "ping"
+      },
+      {
+        "key": "B",
+        "text": "traceroute"
+      },
+      {
+        "key": "C",
+        "text": "ipconfig /all"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Herramienta ICMP empleada para comprobar alcance y respuesta básica entre nodos de una red IP."
+      },
+      {
+        "key": "2",
+        "text": "Utilidad de diagnóstico que identifica la secuencia de saltos que sigue el tráfico hasta un destino."
+      },
+      {
+        "key": "3",
+        "text": "Comando de Windows que muestra la configuración completa de interfaces, IP, DNS, DHCP y otros parámetros."
+      }
+    ],
+    "answer": "A-1, B-2, C-3"
+  },
+  {
+    "id": 38,
+    "number": 1,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "La empresa necesita aprobar, distribuir y controlar actualizaciones del sistema operativo desde un punto central. ¿Cuál es el objetivo principal de WSUS o herramientas equivalentes?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Monitorear potencia óptica"
+      },
+      {
+        "letter": "b",
+        "text": "Configurar VLAN troncales"
+      },
+      {
+        "letter": "c",
+        "text": "Gestionar actualizaciones y parches de sistemas Microsoft"
+      },
+      {
+        "letter": "d",
+        "text": "Desplegar máquinas virtuales"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 39,
+    "number": 2,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "En una LAN empresarial se requiere reenviar tramas según direcciones MAC dentro del mismo segmento. ¿Cuál es la función principal de un switch de capa 2?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Realizar NAT"
+      },
+      {
+        "letter": "b",
+        "text": "Resolver nombres de host"
+      },
+      {
+        "letter": "c",
+        "text": "Asignar direcciones IP automáticamente"
+      },
+      {
+        "letter": "d",
+        "text": "Conmutar tramas usando direcciones MAC"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 40,
+    "number": 3,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "El área de comunicaciones evalúa protocolos dinámicos que calculan rutas según el estado real de los enlaces. ¿Qué protocolo de enrutamiento es de estado de enlace?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "RIP"
+      },
+      {
+        "letter": "b",
+        "text": "OSPF"
+      },
+      {
+        "letter": "c",
+        "text": "ARP"
+      },
+      {
+        "letter": "d",
+        "text": "BGP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 41,
+    "number": 4,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "Un técnico debe segmentar una red y convertir una máscara de subred a su notación CIDR correspondiente. ¿Qué prefijo IPv4 corresponde a la máscara 255.255.255.192?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/25"
+      },
+      {
+        "letter": "b",
+        "text": "/26"
+      },
+      {
+        "letter": "c",
+        "text": "/27"
+      },
+      {
+        "letter": "d",
+        "text": "/28"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 42,
+    "number": 5,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "Antes de iniciar un diagnóstico más profundo, un operador quiere comprobar si otro equipo responde a nivel IP. ¿Qué comando permite verificar alcance IP hacia otro equipo?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "arp -a"
+      },
+      {
+        "letter": "b",
+        "text": "route"
+      },
+      {
+        "letter": "c",
+        "text": "ping"
+      },
+      {
+        "letter": "d",
+        "text": "nslookup"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 43,
+    "number": 6,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "Un administrador revisa el plan de direccionamiento y debe identificar qué direcciones no se enrutan en Internet pública. ¿Qué dirección IPv4 pertenece al rango privado?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "8.8.8.8"
+      },
+      {
+        "letter": "b",
+        "text": "172.20.10.5"
+      },
+      {
+        "letter": "c",
+        "text": "200.10.1.1"
+      },
+      {
+        "letter": "d",
+        "text": "169.254.10.1"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 44,
+    "number": 7,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "Un host conoce la dirección IP de destino dentro de la misma red, pero aún necesita obtener la dirección física asociada. ¿Cuál es la función principal del protocolo ARP?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Cifrar tráfico IP"
+      },
+      {
+        "letter": "b",
+        "text": "Asignar rutas por defecto"
+      },
+      {
+        "letter": "c",
+        "text": "Resolver MAC a partir de IPv4"
+      },
+      {
+        "letter": "d",
+        "text": "Asignar direcciones IPv4 dinámicamente"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 45,
+    "number": 8,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "En una red IPv4 se desea que los equipos reciban automáticamente dirección, máscara, gateway y otros parámetros. ¿Qué protocolo brinda configuración automática de hosts IPv4?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "DHCP"
+      },
+      {
+        "letter": "b",
+        "text": "BGP"
+      },
+      {
+        "letter": "c",
+        "text": "SNMP"
+      },
+      {
+        "letter": "d",
+        "text": "ARP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 46,
+    "number": 9,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "Una organización agotó casi todo su espacio IPv4 y necesita planificar crecimiento para nuevos servicios y dispositivos. ¿Cuál es la principal ventaja de IPv6 frente a IPv4?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Menor seguridad"
+      },
+      {
+        "letter": "b",
+        "text": "Elimina el enrutamiento"
+      },
+      {
+        "letter": "c",
+        "text": "Compatibilidad obligatoria con NAT"
+      },
+      {
+        "letter": "d",
+        "text": "Mayor espacio de direccionamiento"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 47,
+    "number": 10,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "El área de monitoreo necesita consultar contadores y variables de gestión expuestas por routers, switches y servidores. ¿Qué protocolo se emplea para administrar equipos de red y consultar variables de gestión?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "SFTP"
+      },
+      {
+        "letter": "b",
+        "text": "SMTP"
+      },
+      {
+        "letter": "c",
+        "text": "SNMP"
+      },
+      {
+        "letter": "d",
+        "text": "HTTP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 48,
+    "number": 11,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "En una topología con switches redundantes se quiere evitar que las tramas circulen indefinidamente por caminos alternos. ¿Qué acción ayuda a reducir bucles de capa 2 en una red con switches redundantes?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Habilitar STP"
+      },
+      {
+        "letter": "b",
+        "text": "Desactivar VLAN"
+      },
+      {
+        "letter": "c",
+        "text": "Usar solo hubs"
+      },
+      {
+        "letter": "d",
+        "text": "Aumentar el TTL"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 49,
+    "number": 12,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "Un ingeniero revisa cómo se intercambia información de rutas entre grandes redes que pertenecen a distintas organizaciones. ¿Qué protocolo se usa entre sistemas autónomos en Internet?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "BGP"
+      },
+      {
+        "letter": "b",
+        "text": "OSPF"
+      },
+      {
+        "letter": "c",
+        "text": "RSTP"
+      },
+      {
+        "letter": "d",
+        "text": "VRRP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 50,
+    "number": 13,
+    "theme": "TEMA II: Redes, switching y routing",
+    "type": "multiple_choice",
+    "text": "Un estudiante repasa el modelo OSI y debe ubicar la capa responsable del direccionamiento lógico y la decisión de ruta. ¿Qué nivel del modelo OSI corresponde al direccionamiento lógico y al enrutamiento?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Capa 2"
+      },
+      {
+        "letter": "b",
+        "text": "Capa 3"
+      },
+      {
+        "letter": "c",
+        "text": "Capa 7"
+      },
+      {
+        "letter": "d",
+        "text": "Capa 4"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 51,
+    "number": 1,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "true_false",
+    "text": "Se evalúan distintos medios de transmisión para un entorno industrial con mucho ruido eléctrico Un enlace de fibra óptica es inmune a la interferencia electromagnética.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 52,
+    "number": 2,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "true_false",
+    "text": "La empresa instalará cámaras IP en sitios donde no resulta práctico tender alimentación eléctrica por separado. PoE permite transmitir energía eléctrica y datos por el mismo cable Ethernet.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 53,
+    "number": 3,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "true_false",
+    "text": "Un ingeniero revisa el presupuesto óptico de un enlace y necesita interpretar las pérdidas del medio. La atenuación en fibra óptica se mide normalmente en dB por kilómetro.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 54,
+    "number": 4,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "true_false",
+    "text": "Un proveedor de servicios necesita encaminar grandes volúmenes de tráfico de forma eficiente dentro de su backbone. MPLS se usa para etiquetar paquetes y optimizar el transporte en redes de operadores.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 55,
+    "number": 5,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "true_false",
+    "text": "Se estudian distintos patrones de radiación para cubrir un área inalámbrica de forma adecuada. Una antena omnidireccional concentra toda su potencia en un único punto de cobertura.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Falso",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 56,
+    "number": 6,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "true_false",
+    "text": "En una red convergente se desea dar prioridad a tráfico crítico como voz y videoconferencia. QoS permite priorizar tráfico sensible a latencia, como voz y video.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 57,
+    "number": 1,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "matching",
+    "text": "Relacione cada dispositivo de red con su función principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Router"
+      },
+      {
+        "key": "B",
+        "text": "Switch"
+      },
+      {
+        "key": "C",
+        "text": "Access Point"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Dispositivo de capa 3 que encamina paquetes entre redes distintas según tablas y decisiones de enrutamiento."
+      },
+      {
+        "key": "2",
+        "text": "Dispositivo que brinda conectividad inalámbrica y enlaza clientes Wi‑Fi con la red cableada."
+      },
+      {
+        "key": "3",
+        "text": "Equipo de capa 2 que conmuta tramas dentro de una LAN utilizando direcciones MAC."
+      }
+    ],
+    "answer": "A-1, B-3, C-2"
+  },
+  {
+    "id": 58,
+    "number": 2,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "matching",
+    "text": "Relacione cada medio de transmisión con su característica principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "UTP Cat 6"
+      },
+      {
+        "key": "B",
+        "text": "Fibra monomodo"
+      },
+      {
+        "key": "C",
+        "text": "Fibra multimodo"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Medio óptico diseñado para enlaces extensos y alta capacidad con baja dispersión de señal."
+      },
+      {
+        "key": "2",
+        "text": "Medio de cobre empleado de forma habitual en el cableado horizontal para enlaces Ethernet de red local."
+      },
+      {
+        "key": "3",
+        "text": "Medio óptico utilizado en distancias cortas dentro de campus, edificios o centros de datos."
+      }
+    ],
+    "answer": "A-2, B-1, C-3"
+  },
+  {
+    "id": 59,
+    "number": 3,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "matching",
+    "text": "Relacione cada tecnología de red con su función o beneficio principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "PoE"
+      },
+      {
+        "key": "B",
+        "text": "VLAN"
+      },
+      {
+        "key": "C",
+        "text": "QoS"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Tecnología que suministra energía eléctrica y datos a través del mismo enlace Ethernet."
+      },
+      {
+        "key": "2",
+        "text": "Segmentación lógica de una red de capa 2 que separa el tráfico en dominios de broadcast independientes."
+      },
+      {
+        "key": "3",
+        "text": "Conjunto de mecanismos que prioriza tráfico crítico según latencia, jitter, pérdida o prioridad."
+      }
+    ],
+    "answer": "A-1, B-2, C-3"
+  },
+  {
+    "id": 60,
+    "number": 4,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "matching",
+    "text": "Relacione cada concepto de fibra óptica con su definición correspondiente.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Atenuación"
+      },
+      {
+        "key": "B",
+        "text": "Reflectometría OTDR"
+      },
+      {
+        "key": "C",
+        "text": "Longitud de onda"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Disminución de la potencia óptica a lo largo del enlace, normalmente expresada en dB por kilómetro."
+      },
+      {
+        "key": "2",
+        "text": "Valor espectral de la señal óptica, expresado en nanómetros, asociado al canal de transmisión."
+      },
+      {
+        "key": "3",
+        "text": "Prueba que inyecta pulsos de luz para localizar pérdidas, empalmes, eventos y distancias en la fibra."
+      }
+    ],
+    "answer": "A-1, B-3, C-2"
+  },
+  {
+    "id": 61,
+    "number": 5,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "matching",
+    "text": "Relacione cada banda o estándar inalámbrico con su característica principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "2.4 GHz"
+      },
+      {
+        "key": "B",
+        "text": "5 GHz"
+      },
+      {
+        "key": "C",
+        "text": "802.11ax"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Banda Wi‑Fi con mayor cobertura relativa, pero también más susceptible a congestión e interferencias."
+      },
+      {
+        "key": "2",
+        "text": "Banda Wi‑Fi que ofrece más canales y mayor capacidad, a costa de un menor alcance relativo."
+      },
+      {
+        "key": "3",
+        "text": "Estándar Wi‑Fi 6 orientado a mejorar eficiencia, capacidad y desempeño en entornos de alta densidad."
+      }
+    ],
+    "answer": "A-1, B-2, C-3"
+  },
+  {
+    "id": 62,
+    "number": 1,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "Una organización conecta varias subredes y necesita un dispositivo que decida por dónde enviar el tráfico entre ellas. ¿Qué dispositivo enruta tráfico entre redes distintas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Switch"
+      },
+      {
+        "letter": "b",
+        "text": "Router"
+      },
+      {
+        "letter": "c",
+        "text": "Patch panel"
+      },
+      {
+        "letter": "d",
+        "text": "Access Point"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 63,
+    "number": 2,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "Un proyecto requiere un enlace de backbone con gran ancho de banda y baja atenuación a largas distancias. ¿Qué medio es más adecuado para enlaces de larga distancia y alta capacidad?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Cable UTP categoría 5e"
+      },
+      {
+        "letter": "b",
+        "text": "Cable coaxial RG-58"
+      },
+      {
+        "letter": "c",
+        "text": "Fibra multimodo"
+      },
+      {
+        "letter": "d",
+        "text": "Fibra óptica monomodo"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 64,
+    "number": 3,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "En una red convergente se busca dar tratamiento preferencial a aplicaciones sensibles al retardo. ¿Qué significa QoS en redes?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Quality of Service"
+      },
+      {
+        "letter": "b",
+        "text": "Quantity of Signal"
+      },
+      {
+        "letter": "c",
+        "text": "Queue of Security"
+      },
+      {
+        "letter": "d",
+        "text": "Query of Service"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 65,
+    "number": 4,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "Entre dos switches se necesita transportar el tráfico etiquetado de varios segmentos lógicos usando un único enlace. ¿Qué tecnología permite transportar varias VLAN por un mismo enlace físico?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "STP"
+      },
+      {
+        "letter": "b",
+        "text": "802.1Q"
+      },
+      {
+        "letter": "c",
+        "text": "PoE"
+      },
+      {
+        "letter": "d",
+        "text": "LACP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 66,
+    "number": 5,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "En un despliegue residencial de fibra hasta el hogar se necesita el tipo de fibra más común para ese escenario. ¿Qué tipo de fibra se usa típicamente en redes de acceso FTTH?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Fibra monomodo"
+      },
+      {
+        "letter": "b",
+        "text": "Fibra multimodo índice escalonado"
+      },
+      {
+        "letter": "c",
+        "text": "Cable de par trenzado"
+      },
+      {
+        "letter": "d",
+        "text": "Fibra multimodo OM3"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 67,
+    "number": 6,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "En una red Wi‑Fi se compara el comportamiento de distintas bandas para elegir entre velocidad y cobertura. ¿Qué banda inalámbrica suele ofrecer mayor velocidad pero menor alcance?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2.4 GHz"
+      },
+      {
+        "letter": "b",
+        "text": "900 MHz"
+      },
+      {
+        "letter": "c",
+        "text": "5 GHz"
+      },
+      {
+        "letter": "d",
+        "text": "433 MHz"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 68,
+    "number": 7,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "Una empresa instala teléfonos IP y cámaras sin tomas eléctricas cercanas para simplificar el despliegue. ¿Qué tecnología suministra energía a cámaras IP o teléfonos a través del cable de red?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "PoE"
+      },
+      {
+        "letter": "b",
+        "text": "PPP"
+      },
+      {
+        "letter": "c",
+        "text": "MPLS"
+      },
+      {
+        "letter": "d",
+        "text": "VTP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 69,
+    "number": 8,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "Durante la instalación de cableado estructurado se requiere un elemento donde terminan, ordenan y etiquetan múltiples enlaces. ¿Qué equipo termina y organiza físicamente el cableado estructurado en un rack?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Patch panel"
+      },
+      {
+        "letter": "b",
+        "text": "Router de borde"
+      },
+      {
+        "letter": "c",
+        "text": "UPS"
+      },
+      {
+        "letter": "d",
+        "text": "PDU"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 70,
+    "number": 9,
+    "theme": "TEMA III: Infraestructura, telecomunicaciones y conectividad",
+    "type": "multiple_choice",
+    "text": "El equipo de voz reporta cortes y mala experiencia en llamadas sobre la red de datos compartida. ¿Qué métrica afecta directamente la calidad de una llamada VoIP?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Latencia"
+      },
+      {
+        "letter": "b",
+        "text": "Resolución de pantalla"
+      },
+      {
+        "letter": "c",
+        "text": "Velocidad del ventilador"
+      },
+      {
+        "letter": "d",
+        "text": "Capacidad del disco duro"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 71,
+    "number": 1,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "Una empresa busca aprovechar mejor el hardware disponible ejecutando varios sistemas aislados sobre el mismo equipo. La virtualización permite ejecutar varias máquinas virtuales sobre un mismo host físico.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 72,
+    "number": 2,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "En un dominio corporativo se requiere organizar usuarios, equipos y políticas por áreas administrativas. En Active Directory, una Unidad Organizativa (OU) sirve para agrupar y administrar objetos del dominio.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 73,
+    "number": 3,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "El responsable de respaldos compara distintos esquemas para definir tiempos de copia y recuperación. Un backup incremental guarda todos los datos del sistema en cada ejecución.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Falso",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 74,
+    "number": 4,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "En un entorno corporativo se necesita consultar información de usuarios, grupos y otros objetos centralizados. El protocolo LDAP se utiliza para consultar y administrar servicios de directorio.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 75,
+    "number": 5,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "Un servicio crítico no debe detenerse por la caída de un único componente dentro de la infraestructura. La alta disponibilidad busca reducir al mínimo los puntos únicos de falla.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 76,
+    "number": 6,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "Un administrador de almacenamiento desea mejorar la continuidad del servicio ante la falla de un disco. RAID 1 mejora la tolerancia a fallos al duplicar la información en dos discos.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 77,
+    "number": 7,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "El equipo de seguridad define un conjunto de reglas permitidas y luego aplica una política restrictiva al final. En un firewall, una regla deny all final bloquea el tráfico que no coincida con reglas permitidas.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 78,
+    "number": 8,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "En una red corporativa se requiere un equipo que tome decisiones de reenvío entre diferentes subredes. Un router opera principalmente en la capa 3 del modelo OSI.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 79,
+    "number": 9,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "true_false",
+    "text": "En ciertos servicios de telecomunicaciones se reserva capacidad dedicada durante toda la sesión. La conmutación de circuitos reserva recursos exclusivos durante toda la comunicación.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "Verdadero",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 80,
+    "number": 1,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "matching",
+    "text": "Relacione cada esquema RAID con su característica principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "RAID 1"
+      },
+      {
+        "key": "B",
+        "text": "RAID 0"
+      },
+      {
+        "key": "C",
+        "text": "RAID 5"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Esquema de almacenamiento que replica la información en discos distintos para mejorar tolerancia a fallos."
+      },
+      {
+        "key": "2",
+        "text": "Arreglo con paridad distribuida que mantiene operación ante la falla de un disco."
+      },
+      {
+        "key": "3",
+        "text": "Técnica que distribuye bloques entre discos para elevar rendimiento sin ofrecer redundancia."
+      }
+    ],
+    "answer": "A-1, B-3, C-2"
+  },
+  {
+    "id": 81,
+    "number": 2,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "matching",
+    "text": "Relacione cada componente de infraestructura con su función principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Hipervisor"
+      },
+      {
+        "key": "B",
+        "text": "Contenedor"
+      },
+      {
+        "key": "C",
+        "text": "Balanceador de carga"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Capa de virtualización que crea, ejecuta y administra máquinas virtuales sobre el hardware o un sistema anfitrión."
+      },
+      {
+        "key": "2",
+        "text": "Componente que reparte solicitudes entre varios nodos para optimizar disponibilidad, escalabilidad y rendimiento."
+      },
+      {
+        "key": "3",
+        "text": "Mecanismo de aislamiento a nivel de sistema operativo que comparte el kernel y encapsula aplicaciones con sus dependencias"
+      }
+    ],
+    "answer": "A-1, B-3, C-2"
+  },
+  {
+    "id": 82,
+    "number": 3,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "matching",
+    "text": "Relacione cada concepto de continuidad o seguridad con su definición",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Alta disponibilidad"
+      },
+      {
+        "key": "B",
+        "text": "Hardening"
+      },
+      {
+        "key": "C",
+        "text": "SIEM"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Arquitectura orientada a mantener servicios operativos mediante redundancia y eliminación de puntos únicos de falla."
+      },
+      {
+        "key": "2",
+        "text": "Proceso de securización que reduce la superficie de ataque mediante configuraciones restrictivas y controles adicionales."
+      },
+      {
+        "key": "3",
+        "text": "Plataforma que centraliza, correlaciona y analiza eventos de seguridad para apoyar detección e investigación."
+      }
+    ],
+    "answer": "A-1, B-2, C-3"
+  },
+  {
+    "id": 83,
+    "number": 4,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "matching",
+    "text": "Relacione cada tipo de copia de seguridad con su característica",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Completo"
+      },
+      {
+        "key": "B",
+        "text": "Incremental"
+      },
+      {
+        "key": "C",
+        "text": "Diferencial"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Respaldo que guarda solo los cambios ocurridos desde el último backup completo o incremental."
+      },
+      {
+        "key": "2",
+        "text": "Respaldo que copia la totalidad de los datos seleccionados en cada ejecución programada."
+      },
+      {
+        "key": "3",
+        "text": "Respaldo que conserva los cambios acumulados desde el último backup completo."
+      }
+    ],
+    "answer": "A-2, B-1, C-3"
+  },
+  {
+    "id": 84,
+    "number": 5,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "matching",
+    "text": "Relacione cada indicador de continuidad o servicio con su definición",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "RPO"
+      },
+      {
+        "key": "B",
+        "text": "RTO"
+      },
+      {
+        "key": "C",
+        "text": "SLA"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Máxima cantidad de información que la organización acepta perder, expresada como ventana de tiempo."
+      },
+      {
+        "key": "2",
+        "text": "Tiempo máximo definido para restablecer un servicio después de una interrupción operativa."
+      },
+      {
+        "key": "3",
+        "text": "Acuerdo formal que establece niveles de servicio, métricas, tiempos y responsabilidades entre las partes."
+      }
+    ],
+    "answer": "A-1, B-2, C-3"
+  },
+  {
+    "id": 85,
+    "number": 6,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "matching",
+    "text": "Relacione cada componente de cableado o energía con su función principal.",
+    "options": [],
+    "matchingColumnA": [
+      {
+        "key": "A",
+        "text": "Patch panel"
+      },
+      {
+        "key": "B",
+        "text": "Rack"
+      },
+      {
+        "key": "C",
+        "text": "UPS"
+      }
+    ],
+    "matchingColumnB": [
+      {
+        "key": "1",
+        "text": "Sistema de respaldo eléctrico que suministra energía temporal y acondicionamiento ante fallos del suministro."
+      },
+      {
+        "key": "2",
+        "text": "Estructura normalizada destinada al montaje físico de equipos, paneles, bandejas y accesorios."
+      },
+      {
+        "key": "3",
+        "text": "Elemento pasivo donde termina y se organiza el cableado estructurado para facilitar su administración."
+      }
+    ],
+    "answer": "A-3, B-2, C-1"
+  },
+  {
+    "id": 86,
+    "number": 1,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "En una red corporativa, los usuarios ingresan nombres como intranet.empresa.local en lugar de direcciones numéricas. ¿Qué servicio se usa comúnmente para la resolución de nombres en una red corporativa?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "DHCP"
+      },
+      {
+        "letter": "b",
+        "text": "NTP"
+      },
+      {
+        "letter": "c",
+        "text": "LDAP"
+      },
+      {
+        "letter": "d",
+        "text": "DNS"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 87,
+    "number": 2,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "La empresa quiere reducir el volumen de datos respaldados diariamente sin perder la secuencia de cambios recientes. ¿Qué tipo de copia de seguridad almacena únicamente los cambios desde el último respaldo realizado, ya sea completo o incremental?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Diferencial"
+      },
+      {
+        "letter": "b",
+        "text": "Completo"
+      },
+      {
+        "letter": "c",
+        "text": "RAID 1"
+      },
+      {
+        "letter": "d",
+        "text": "Incremental"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 88,
+    "number": 3,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "Se diseña una plataforma que debe combinar alto rendimiento con tolerancia a fallos en el almacenamiento. ¿Cuál es una ventaja directa de usar RAID 10?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Aumentar la latencia"
+      },
+      {
+        "letter": "b",
+        "text": "Combinar rendimiento y redundancia"
+      },
+      {
+        "letter": "c",
+        "text": "Eliminar la necesidad de respaldos"
+      },
+      {
+        "letter": "d",
+        "text": "Aumentar la fragmentación"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 89,
+    "number": 4,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "El área de seguridad revisa medidas para disminuir el riesgo asociado a privilegios elevados en producción. ¿Qué práctica mejora la seguridad de cuentas administrativas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Usar contraseñas compartidas por equipo"
+      },
+      {
+        "letter": "b",
+        "text": "Aplicar autenticación multifactor"
+      },
+      {
+        "letter": "c",
+        "text": "Deshabilitar registros de auditoría"
+      },
+      {
+        "letter": "d",
+        "text": "Mantener cuentas sin rotación de claves"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 90,
+    "number": 5,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "El personal de operaciones quiere detectar caídas, latencia elevada y consumo anormal de recursos antes de que impacten al usuario. ¿Cuál es el objetivo de un sistema de monitoreo como Zabbix, Nagios o Prometheus?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Diseñar bases de datos relacionales"
+      },
+      {
+        "letter": "b",
+        "text": "Detectar eventos y métricas operativas de infraestructura"
+      },
+      {
+        "letter": "c",
+        "text": "Emitir certificados digitales"
+      },
+      {
+        "letter": "d",
+        "text": "Configurar políticas de respaldo"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "b",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 91,
+    "number": 6,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "Un portal corporativo debe proteger la confidencialidad e integridad del tráfico entre navegador y servidor. ¿Qué protocolo se utiliza para transferir páginas web de forma segura?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "SNMP"
+      },
+      {
+        "letter": "b",
+        "text": "TFTP"
+      },
+      {
+        "letter": "c",
+        "text": "HTTPS"
+      },
+      {
+        "letter": "d",
+        "text": "SSH"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 92,
+    "number": 7,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "Una aplicación crítica no puede quedar fuera de servicio por la caída de un solo componente. ¿Qué beneficio ofrece la alta disponibilidad en servicios críticos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Disminuye redundancia"
+      },
+      {
+        "letter": "b",
+        "text": "Impide el uso de clústeres"
+      },
+      {
+        "letter": "c",
+        "text": "Aumenta el punto único de falla"
+      },
+      {
+        "letter": "d",
+        "text": "Reduce tiempos de inactividad del servicio"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 93,
+    "number": 8,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "El área de infraestructura quiere reunir en un mismo punto los registros generados por servidores, firewalls y aplicaciones. ¿Qué solución se usa normalmente para centralizar registros de eventos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Traceroute"
+      },
+      {
+        "letter": "b",
+        "text": "DHCP Relay"
+      },
+      {
+        "letter": "c",
+        "text": "Syslog/SIEM"
+      },
+      {
+        "letter": "d",
+        "text": "NTP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 94,
+    "number": 9,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "Antes de poner un servidor en producción, el equipo revisa medidas para reducir su superficie de ataque. ¿Qué acción forma parte del hardening de servidores?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Deshabilitar servicios no utilizados"
+      },
+      {
+        "letter": "b",
+        "text": "Habilitar cuentas genéricas"
+      },
+      {
+        "letter": "c",
+        "text": "Compartir privilegios root"
+      },
+      {
+        "letter": "d",
+        "text": "Habilitar acceso anónimo"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 95,
+    "number": 10,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "Un administrador necesita ejecutar respaldos o scripts de mantenimiento de manera automática en horarios definidos. ¿Qué herramienta permite programar tareas periódicas en Linux?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "scp"
+      },
+      {
+        "letter": "b",
+        "text": "grep"
+      },
+      {
+        "letter": "c",
+        "text": "cron"
+      },
+      {
+        "letter": "d",
+        "text": "systemctl"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "c",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 96,
+    "number": 11,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "Un proveedor de servicios documenta los compromisos formales de disponibilidad, tiempos de respuesta y niveles de soporte. ¿Qué significa SLA en la gestión de servicios TI?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Service Level Agreement"
+      },
+      {
+        "letter": "b",
+        "text": "Secure Login Access"
+      },
+      {
+        "letter": "c",
+        "text": "System Link Adapter"
+      },
+      {
+        "letter": "d",
+        "text": "Storage Link Allocation"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 97,
+    "number": 12,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "En un entorno con directorio corporativo, una aplicación necesita consultar usuarios, grupos y atributos almacenados centralmente. ¿Qué protocolo se usa para consulta y modificación de directorios corporativos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "LDAP"
+      },
+      {
+        "letter": "b",
+        "text": "RDP"
+      },
+      {
+        "letter": "c",
+        "text": "IMAP"
+      },
+      {
+        "letter": "d",
+        "text": "SMTP"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 98,
+    "number": 13,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "Un equipo de desarrollo quiere ejecutar servicios aislados con menor sobrecarga que una máquina virtual tradicional. ¿Qué tecnología permite ejecutar varias aplicaciones aisladas compartiendo el mismo kernel del sistema operativo?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "RAID 0"
+      },
+      {
+        "letter": "b",
+        "text": "SAN FC"
+      },
+      {
+        "letter": "c",
+        "text": "Balanceadores de carga"
+      },
+      {
+        "letter": "d",
+        "text": "Contenedores"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 99,
+    "number": 14,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "En un sistema de transmisión, cierto equipo debe adaptar la señal al pasar del dominio óptico al eléctrico y viceversa. ¿Qué equipo convierte señales ópticas en eléctricas y viceversa en algunos sistemas de transmisión?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Atenuador fijo"
+      },
+      {
+        "letter": "b",
+        "text": "Patch cord"
+      },
+      {
+        "letter": "c",
+        "text": "ODF"
+      },
+      {
+        "letter": "d",
+        "text": "Transceptor"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "d",
+    "rawMatchingLines": []
+  },
+  {
+    "id": 100,
+    "number": 15,
+    "theme": "TEMA IV: Seguridad, continuidad y buenas prácticas TI",
+    "type": "multiple_choice",
+    "text": "Durante un incidente de red se necesita observar el tráfico real para validar protocolos, puertos y comportamiento de paquetes. ¿Qué herramienta permite capturar y analizar paquetes en una red?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wireshark"
+      },
+      {
+        "letter": "b",
+        "text": "Hyper-V"
+      },
+      {
+        "letter": "c",
+        "text": "Ansible"
+      },
+      {
+        "letter": "d",
+        "text": "Grafana"
+      }
+    ],
+    "matchingColumnA": [],
+    "matchingColumnB": [],
+    "answer": "a",
+    "rawMatchingLines": []
+  }
+];
