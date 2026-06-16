@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Offline - SysNetSim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .check {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .check.pass {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .check.fail {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .check.loading {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+        }
+        .icon {
+            font-size: 20px;
+            font-weight: bold;
+            width: 30px;
+            text-align: center;
+        }
+        h1 { color: #333; }
+        .summary {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <h1>✅ Verificación de Funcionamiento Offline</h1>
+    
+    <div id="checks"></div>
+    <div class="summary" id="summary"></div>
+
+    <script>
+        const checks = [];
+        const container = document.getElementById('checks');
+        const summary = document.getElementById('summary');
+
+        async function runChecks() {
+            // Check 1: Service Worker
+            addCheck('loading', 'Service Worker', 'Verificando registro...');
+            try {
+                if ('serviceWorker' in navigator) {
+                    const registration = await navigator.serviceWorker.getRegistration();
+                    if (registration) {
+                        updateCheck(0, 'pass', 'Service Worker', '✓ Registrado y activo');
+                    } else {
+                        updateCheck(0, 'fail', 'Service Worker', '✗ No registrado');
+                    }
+                } else {
+                    updateCheck(0, 'fail', 'Service Worker', '✗ No soportado en este navegador');
+                }
+            } catch (e) {
+                updateCheck(0, 'fail', 'Service Worker', `✗ Error: ${e.message}`);
+            }
+
+            // Check 2: Cache API
+            addCheck('loading', 'Cache API', 'Verificando caché...');
+            try {
+                const cacheNames = await caches.keys();
+                const sysnetsimCache = cacheNames.find(name => name.includes('sysnetsim'));
+                if (sysnetsimCache) {
+                    const cache = await caches.open(sysnetsimCache);
+                    const keys = await cache.keys();
+                    updateCheck(1, 'pass', 'Cache API', `✓ ${keys.length} archivos en caché`);
+                } else {
+                    updateCheck(1, 'fail', 'Cache API', '✗ Caché no encontrado');
+                }
+            } catch (e) {
+                updateCheck(1, 'fail', 'Cache API', `✗ Error: ${e.message}`);
+            }
+
+            // Check 3: LocalStorage para puntuaciones
+            addCheck('loading', 'LocalStorage', 'Verificando almacenamiento local...');
+            try {
+                localStorage.setItem('test-key', 'test-value');
+                const value = localStorage.getItem('test-key');
+                localStorage.removeItem('test-key');
+                if (value === 'test-value') {
+                    const scoresData = localStorage.getItem('sysnetsim-scores');
+                    const scoreCount = scoresData ? JSON.parse(scoresData).length : 0;
+                    updateCheck(2, 'pass', 'LocalStorage', `✓ ${scoreCount} puntuaciones guardadas`);
+                } else {
+                    updateCheck(2, 'fail', 'LocalStorage', '✗ No funciona');
+                }
+            } catch (e) {
+                updateCheck(2, 'fail', 'LocalStorage', `✗ Error: ${e.message}`);
+            }
+
+            // Check 4: Preguntas cargadas
+            addCheck('loading', 'Preguntas', 'Verificando carga de preguntas...');
+            try {
+                if (typeof QUESTIONS !== 'undefined') {
+                    updateCheck(3, 'pass', 'Preguntas', `✓ ${QUESTIONS.length} preguntas disponibles`);
+                } else {
+                    updateCheck(3, 'fail', 'Preguntas', '✗ questions.js no cargado');
+                }
+            } catch (e) {
+                updateCheck(3, 'fail', 'Preguntas', `✗ Error: ${e.message}`);
+            }
+
+            // Check 5: Manifest
+            addCheck('loading', 'Manifest.json', 'Verificando PWA manifest...');
+            try {
+                const link = document.querySelector('link[rel="manifest"]');
+                if (link) {
+                    const response = await fetch(link.href);
+                    if (response.ok) {
+                        const manifest = await response.json();
+                        updateCheck(4, 'pass', 'Manifest.json', `✓ Válido (${manifest.name})`);
+                    } else {
+                        updateCheck(4, 'fail', 'Manifest.json', '✗ No se puede cargar');
+                    }
+                } else {
+                    updateCheck(4, 'fail', 'Manifest.json', '✗ No encontrado en HTML');
+                }
+            } catch (e) {
+                updateCheck(4, 'fail', 'Manifest.json', `✗ Error: ${e.message}`);
+            }
+
+            // Summary
+            setTimeout(() => {
+                const passed = checks.filter(c => c === 'pass').length;
+                const failed = checks.filter(c => c === 'fail').length;
+                const status = failed === 0 ? '✅ LISTO PARA GENERAR APK' : '⚠️ Corregir errores';
+                const color = failed === 0 ? '#28a745' : '#dc3545';
+                
+                summary.innerHTML = `
+                    <h2 style="color: ${color}">${status}</h2>
+                    <p><strong>${passed}/5</strong> verificaciones pasadas</p>
+                    <p><strong>${failed}/5</strong> verificaciones fallidas</p>
+                    ${failed === 0 ? `
+                        <p style="color: green; font-weight: bold;">
+                            La aplicación funciona completamente offline.
+                            Ya puedes generar la APK en PWA Builder.
+                        </p>
+                    ` : `
+                        <p style="color: red;">
+                            Resuelve los errores antes de generar la APK.
+                            Abre Console (F12) para más detalles.
+                        </p>
+                    `}
+                `;
+            }, 500);
+        }
+
+        function addCheck(status, title, message) {
+            const index = checks.length;
+            checks.push(status);
+            const div = document.createElement('div');
+            div.className = `check ${status}`;
+            div.id = `check-${index}`;
+            div.innerHTML = `
+                <span class="icon" id="icon-${index}">●</span>
+                <div>
+                    <strong>${title}</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9em;">${message}</p>
+                </div>
+            `;
+            container.appendChild(div);
+        }
+
+        function updateCheck(index, status, title, message) {
+            checks[index] = status;
+            const div = document.getElementById(`check-${index}`);
+            div.className = `check ${status}`;
+            const icon = document.getElementById(`icon-${index}`);
+            const statusSymbol = status === 'pass' ? '✓' : status === 'fail' ? '✗' : '●';
+            icon.textContent = statusSymbol;
+            div.innerHTML = `
+                <span class="icon" id="icon-${index}">${statusSymbol}</span>
+                <div>
+                    <strong>${title}</strong>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9em;">${message}</p>
+                </div>
+            `;
+        }
+
+        // Ejecutar verificaciones cuando carga la página
+        window.addEventListener('load', runChecks);
+    </script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SysNetSim - Simulador de Examen</title>
+  <meta name="description" content="Simulador interactivo para examen de Administrador de Sistemas y Servicios. 100 preguntas oficiales.">
+
+  <!-- PWA: Manifest e Íconos -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- iOS Safari PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="SysNetSim">
+  <link rel="apple-touch-icon" href="/icon-512.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+  <!-- Background Glows for Glassmorphism effect -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-logo">
+        <i class="fa-solid fa-server logo-icon"></i>
+        <div>
+          <h1>SysNetSim</h1>
+          <p>Simulador de Sistemas y Redes</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <button id="sound-btn" class="icon-btn" title="Activar/Desactivar Sonido">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <button id="theme-btn" class="icon-btn" title="Cambiar Tema">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN SCENE CONTAINER -->
+    <main class="main-content">
+      
+      <!-- SCREEN 1: START SCREEN -->
+      <section id="start-screen" class="screen active">
+        <div class="welcome-card card">
+          <div class="welcome-badge">
+            <span class="pulse-dot"></span> Administrador de Sistemas y Servicios
+          </div>
+          <h2>Pon a prueba tus conocimientos</h2>
+          <p class="welcome-desc">
+            Prepárate con este simulador premium interactivo. Contiene las 100 preguntas del cuestionario oficial de sistemas operativos, redes, seguridad y gobernanza TI.
+          </p>
+
+          <!-- User Identification -->
+          <div class="input-group">
+            <label for="username"><i class="fa-regular fa-user"></i> Tu Nombre / Nickname</label>
+            <input type="text" id="username" placeholder="Ingresa tu nombre para el historial de puntajes..." autocomplete="off">
+          </div>
+
+          <!-- Mode Selection -->
+          <h3 class="section-title">Selecciona un Modo de Estudio</h3>
+          <div class="modes-grid">
+            <!-- Mode 1: Exam Simulation -->
+            <div class="mode-card clickable active" data-mode="exam">
+              <div class="mode-icon-container bg-exam">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h4>Simulación de Examen</h4>
+              <p>60 preguntas aleatorias de todos los temas. Tiempo limitado de 60 minutos. Simula el entorno real del examen.</p>
+              <div class="mode-meta">
+                <span><i class="fa-regular fa-clock"></i> 60 min</span>
+                <span><i class="fa-solid fa-list-check"></i> 60 preguntas</span>
+              </div>
+            </div>
+
+            <!-- Mode 2: Free Practice -->
+            <div class="mode-card clickable" data-mode="practice">
+              <div class="mode-icon-container bg-practice">
+                <i class="fa-solid fa-dumbbell"></i>
+              </div>
+              <h4>Práctica Libre</h4>
+              <p>Práctica sin presión de tiempo. Responde a tu propio ritmo. Elige la cantidad de preguntas y revisa tus respuestas.</p>
+              <div class="mode-meta">
+                <span><i class="fa-solid fa-infinity"></i> Sin tiempo</span>
+                <span><i class="fa-solid fa-sliders"></i> Ajustable</span>
+              </div>
+            </div>
+
+            <!-- Mode 3: Theme Study -->
+            <div class="mode-card clickable" data-mode="theme">
+              <div class="mode-icon-container bg-theme">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <h4>Estudio por Tema</h4>
+              <p>Concéntrate en un tema específico del cuestionario para perfeccionar tus áreas débiles.</p>
+              <div class="mode-meta">
+                <span><i class="fa-solid fa-tags"></i> Por categorías</span>
+                <span><i class="fa-solid fa-arrow-trend-up"></i> Enfoque</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Extra Settings Panel -->
+          <div id="settings-panel" class="settings-panel card-inner">
+            <!-- Dynamic Category Filter (visible only for Theme Mode) -->
+            <div id="theme-selector-group" class="setting-item hidden">
+              <label for="theme-select"><i class="fa-solid fa-filter"></i> Seleccionar Tema:</label>
+              <select id="theme-select" class="custom-select">
+                <option value="1">Tema I: Sistemas operativos, servicios y soporte</option>
+                <option value="2">Tema II: Redes, switching y routing</option>
+                <option value="3">Tema III: Seguridad de la información y políticas</option>
+                <option value="4">Tema IV: Gestión de servicios de TI y gobernanza</option>
+              </select>
+            </div>
+
+            <!-- Question count slider (visible for Practice mode) -->
+            <div id="question-count-group" class="setting-item hidden">
+              <div class="slider-label">
+                <span><i class="fa-solid fa-hashtag"></i> Número de Preguntas:</span>
+                <span id="question-count-val">40</span>
+              </div>
+              <input type="range" id="question-count-slider" min="5" max="100" step="5" value="40" class="custom-range">
+            </div>
+          </div>
+
+          <button id="start-btn" class="primary-btn btn-glowing">
+            ¡Comenzar Simulación! <i class="fa-solid fa-play"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- SCREEN 2: QUIZ SCREEN -->
+      <section id="quiz-screen" class="screen">
+        <div class="quiz-grid">
+          
+          <!-- Question Panel -->
+          <div class="quiz-main-card card">
+            <!-- Question Top Header -->
+            <div class="quiz-progress-bar-container">
+              <div id="quiz-progress-fill" class="progress-bar-fill"></div>
+            </div>
+            
+            <div class="quiz-meta-row">
+              <span id="question-theme-badge" class="theme-badge">TEMA I: Redes y Routing</span>
+              <span id="question-counter" class="counter-badge">Pregunta 1 de 60</span>
+            </div>
+
+            <!-- Question Text -->
+            <div class="question-container">
+              <h3 id="question-text">¿Qué puerto utiliza por defecto el protocolo HTTPS para comunicaciones cifradas en la web?</h3>
+            </div>
+
+            <!-- Question Options Render Target -->
+            <div id="options-container" class="options-container">
+              <!-- Rendered dynamically by app.js:
+                   - For True/False: Two big buttons
+                   - For Multiple Choice: Letters a, b, c, d
+                   - For Matching: Column A + Column B interactive nodes
+              -->
+            </div>
+
+            <!-- Matching Interaction Instruction / Canvas helper -->
+            <div id="matching-helper" class="matching-helper hidden">
+              <p><i class="fa-solid fa-circle-info"></i> Haz clic en un elemento de la columna de la izquierda y luego en su correspondiente de la derecha para conectarlos.</p>
+              <div id="matching-connections" class="matching-connections-list"></div>
+            </div>
+
+            <!-- Feedback Alert (Shown after clicking "Verify") -->
+            <div id="feedback-panel" class="feedback-panel hidden">
+              <div class="feedback-icon-container">
+                <i id="feedback-icon" class="fa-solid fa-check"></i>
+              </div>
+              <div class="feedback-content">
+                <h4 id="feedback-title">¡Respuesta Correcta!</h4>
+                <p id="feedback-desc">La opción seleccionada es la correcta para este enunciado.</p>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="quiz-actions">
+              <button id="exit-quiz-btn" class="secondary-btn text-danger">
+                <i class="fa-solid fa-arrow-left"></i> Salir
+              </button>
+              <div class="actions-right">
+                <button id="verify-btn" class="primary-btn accent-btn">
+                  Verificar Respuesta <i class="fa-solid fa-circle-check"></i>
+                </button>
+                <button id="next-btn" class="primary-btn hidden">
+                  Siguiente Pregunta <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info / Timer Sidebar -->
+          <div class="quiz-sidebar">
+            <!-- Timer Card -->
+            <div class="sidebar-card card text-center">
+              <h5>Tiempo Restante</h5>
+              <div class="timer-wrapper">
+                <svg class="timer-svg" viewBox="0 0 100 100">
+                  <circle class="timer-circle-bg" cx="50" cy="50" r="45"></circle>
+                  <circle id="timer-circle-progress" class="timer-circle-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div id="timer-text" class="timer-text">60:00</div>
+              </div>
+            </div>
+
+            <!-- Exam Stats Card -->
+            <div class="sidebar-card card">
+              <h5>Progreso Actual</h5>
+              <div class="stats-row">
+                <div class="stat-item text-success">
+                  <span class="stat-num" id="stat-correct">0</span>
+                  <span class="stat-label">Correctas</span>
+                </div>
+                <div class="stat-item text-danger">
+                  <span class="stat-num" id="stat-incorrect">0</span>
+                  <span class="stat-label">Incorrectas</span>
+                </div>
+              </div>
+              
+              <div class="sidebar-info-list">
+                <div class="info-row">
+                  <span>Modo:</span>
+                  <strong id="sidebar-mode-val">Simulación</strong>
+                </div>
+                <div class="info-row">
+                  <span>Usuario:</span>
+                  <strong id="sidebar-user-val">Invitado</strong>
+                </div>
+              </div>
+
+              <button id="finish-early-btn" class="secondary-btn btn-block">
+                Finalizar Examen <i class="fa-solid fa-flag-checkered"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SCREEN 3: RESULTS SCREEN -->
+      <section id="results-screen" class="screen">
+        <div class="results-grid">
+          
+          <!-- Summary Performance Card -->
+          <div class="card result-score-card text-center">
+            <div class="result-badge-container">
+              <i class="fa-solid fa-trophy trophy-icon"></i>
+            </div>
+            <h2>¡Cuestionario Completado!</h2>
+            <p id="result-message" class="result-msg-text">¡Excelente esfuerzo! Has finalizado el simulador.</p>
+
+            <div class="radial-progress-container">
+              <svg class="radial-svg" viewBox="0 0 120 120">
+                <circle class="radial-bg" cx="60" cy="60" r="50"></circle>
+                <circle id="radial-progress" class="radial-progress" cx="60" cy="60" r="50"></circle>
+              </svg>
+              <div class="radial-content">
+                <span id="result-percentage" class="percentage-number">0%</span>
+                <span class="percentage-label">Puntaje</span>
+              </div>
+            </div>
+
+            <div class="score-fraction-text">
+              <span id="result-correct-count">0</span> / <span id="result-total-count">60</span> respuestas correctas
+            </div>
+          </div>
+
+          <!-- Stats & History Column -->
+          <div class="card results-details-card">
+            <h3>Desglose de Rendimiento</h3>
+            
+            <!-- Overall Stats Details -->
+            <div class="overall-details-grid">
+              <div class="detail-tile">
+                <span class="tile-label"><i class="fa-regular fa-clock"></i> Tiempo Empleado</span>
+                <strong id="result-time-taken">00:00</strong>
+              </div>
+              <div class="detail-tile">
+                <span class="tile-label"><i class="fa-solid fa-gamepad"></i> Modo de Juego</span>
+                <strong id="result-mode-val">Simulación</strong>
+              </div>
+              <div class="detail-tile">
+                <span class="tile-label"><i class="fa-solid fa-star"></i> Calificación</span>
+                <strong id="result-rating-val">Aprobado</strong>
+              </div>
+            </div>
+
+            <!-- Categories Breakdown -->
+            <h4 class="section-subtitle">Rendimiento por Categoría</h4>
+            <div id="category-bars-container" class="category-bars-container">
+              <!-- Rendered dynamically by app.js: progress bars for Theme I, II, III, IV -->
+            </div>
+
+            <!-- Bottom actions -->
+            <div class="results-actions">
+              <button id="restart-btn" class="primary-btn btn-glowing">
+                <i class="fa-solid fa-rotate-right"></i> Volver a Intentar
+              </button>
+              <button id="view-scoreboard-btn" class="secondary-btn">
+                <i class="fa-solid fa-list-ol"></i> Ver Historial general
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- History Scoreboard Modal / Section -->
+        <div id="scoreboard-section" class="card scoreboard-card mt-4">
+          <div class="scoreboard-header">
+            <h3><i class="fa-solid fa-ranking-star"></i> Historial de Puntajes</h3>
+            <button id="close-scoreboard-btn" class="icon-btn-text">Ocultar <i class="fa-solid fa-chevron-up"></i></button>
+          </div>
+          <div class="table-container">
+            <table class="scoreboard-table">
+              <thead>
+                <tr>
+                  <th>Usuario</th>
+                  <th>Modo</th>
+                  <th>Fecha</th>
+                  <th>Respuestas</th>
+                  <th>Puntaje</th>
+                </tr>
+              </thead>
+              <tbody id="scoreboard-body">
+                <!-- Scores loaded via REST API or localStorage dynamically -->
+                <tr>
+                  <td colspan="5" class="text-center text-muted">No hay puntuaciones registradas aún.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Review Question Breakdown Panel -->
+        <div class="card review-card mt-4">
+          <div class="review-header">
+            <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Revisión de Respuestas</h3>
+            <div class="review-filters">
+              <button class="filter-btn active" data-filter="all">Todas</button>
+              <button class="filter-btn" data-filter="correct"><i class="fa-solid fa-check text-success"></i> Correctas</button>
+              <button class="filter-btn" data-filter="incorrect"><i class="fa-solid fa-xmark text-danger"></i> Incorrectas</button>
+            </div>
+          </div>
+
+          <div id="review-list-container" class="review-list-container">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer text-center">
+      <p>© 2026 SysNetSim • Cuestionario Oficial para Administrador de Sistemas y Servicios</p>
+    </footer>
+  </div>
+
+  <!-- PWA: Banner de instalación (se muestra automáticamente si el navegador lo soporta) -->
+  <div id="pwa-install-banner" class="hidden">
+    <img src="/icon-192.png" alt="SysNetSim" class="pwa-banner-icon">
+    <div class="pwa-banner-text">
+      <strong>Instalar SysNetSim</strong>
+      <span>Úsala desde tu pantalla de inicio, sin internet</span>
+    </div>
+    <div class="pwa-banner-actions">
+      <button id="pwa-install-btn"><i class="fa-solid fa-download"></i> Instalar</button>
+      <button id="pwa-dismiss-btn">Ahora no</button>
+    </div>
+  </div>
+
+  <!-- Load Questions Database -->
+  <script src="questions.js"></script>
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+
+  <!-- PWA: Registro del Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('[PWA] Service Worker registrado:', reg.scope))
+          .catch(err => console.warn('[PWA] Error al registrar SW:', err));
+      });
+    }
+  </script>
+</body>
+</html>
