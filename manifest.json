@@ -2,13 +2,13 @@
   "name": "SysNetSim - Simulador de Examen de Administrador de Sistemas",
   "short_name": "SysNetSim",
   "description": "Simulador interactivo para examen de Administrador de Sistemas y Servicios. Practica sin conexión a internet.",
-  "start_url": "./",
+  "start_url": "/Reymono25-simulador-apk/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4f46e5",
   "orientation": "portrait-primary",
   "lang": "es",
-  "scope": "./",
+  "scope": "/Reymono25-simulador-apk/",
   "prefer_related_applications": false,
   "icons": [
     {
@@ -27,7 +27,7 @@
   "categories": ["education", "productivity"],
   "screenshots": [
     {
-      "src": "icon-512.png",
+      "src": "/Reymono25-simulador-apk/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "form_factor": "narrow"
@@ -38,10 +38,10 @@
       "name": "Iniciar Examen",
       "short_name": "Examen",
       "description": "Inicia un nuevo examen completo",
-      "url": "?mode=exam",
+      "url": "/Reymono25-simulador-apk/?mode=exam",
       "icons": [
         {
-          "src": "icon-192.png",
+          "src": "/Reymono25-simulador-apk/icon-192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
