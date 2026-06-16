@@ -7,7 +7,7 @@
   <meta name="description" content="Simulador interactivo para examen de Administrador de Sistemas y Servicios. 100 preguntas oficiales.">
 
   <!-- PWA: Manifest e Íconos -->
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#4f46e5">
   <meta name="mobile-web-app-capable" content="yes">
 
@@ -15,7 +15,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="SysNetSim">
-  <link rel="apple-touch-icon" href="/icon-512.png">
+  <link rel="apple-touch-icon" href="./icon-512.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -377,7 +377,7 @@
 
   <!-- PWA: Banner de instalación (se muestra automáticamente si el navegador lo soporta) -->
   <div id="pwa-install-banner" class="hidden">
-    <img src="/icon-192.png" alt="SysNetSim" class="pwa-banner-icon">
+    <img src="./icon-192.png" alt="SysNetSim" class="pwa-banner-icon">
     <div class="pwa-banner-text">
       <strong>Instalar SysNetSim</strong>
       <span>Úsala desde tu pantalla de inicio, sin internet</span>
@@ -389,15 +389,15 @@
   </div>
 
   <!-- Load Questions Database -->
-  <script src="questions.js"></script>
+  <script src="./questions.js"></script>
   <!-- Main Application Script -->
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 
   <!-- PWA: Registro del Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('./sw.js')
           .then(reg => console.log('[PWA] Service Worker registrado:', reg.scope))
           .catch(err => console.warn('[PWA] Error al registrar SW:', err));
       });
