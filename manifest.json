@@ -2,13 +2,13 @@
   "name": "SysNetSim - Simulador de Examen de Administrador de Sistemas",
   "short_name": "SysNetSim",
   "description": "Simulador interactivo para examen de Administrador de Sistemas y Servicios. Practica sin conexión a internet.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4f46e5",
   "orientation": "portrait-primary",
   "lang": "es",
-  "scope": "/",
+  "scope": "./",
   "prefer_related_applications": false,
   "icons": [
     {
